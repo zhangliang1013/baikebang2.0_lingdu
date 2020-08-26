@@ -1,0 +1,17 @@
+<!-- 店长端排班页面 -->
+<view class="main">
+
+<block wx:for="{{manList}}" wx:key="index" >
+<view class="row"   bindtap="selectApply" data-index="{{index}}">
+<view class="left">{{item.name}}</view>
+<view class="right {{item.isSelect ? 'active':''}}">
+<view class="xin"></view>
+</view>
+</view>
+</block>
+
+<view class="footer">
+<view class="left_btn" bindtap="handleQu">取消</view>
+<view class="right_btn" bindtap="handleSuer">确认</view>
+</view>
+</view>

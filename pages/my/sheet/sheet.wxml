@@ -1,0 +1,32 @@
+<!-- 我的考勤页面 -->
+<view class="main"> 
+
+<navigator url="/pages/my/check/check"  class="row" hover-class="none">
+<view class="left">考勤查询</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill" > </image>
+</view>
+</navigator>
+
+<navigator class="row" url="/pages/my/worker/worker" hover-class="none">
+<view class="left">排班查询</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill" > </image>
+</view>
+</navigator>
+
+<navigator url="/pages/my/bugLeave/bugLeave"  class="row" hover-class="none">
+<view class="left">请假</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill" > </image>
+</view>
+</navigator>
+
+<navigator class="row" url="/pages/my/officLeave/officLeave?time={{time}}" hover-class="none">
+<view class="left">离职</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill" > </image>
+</view>
+ </navigator>
+
+</view>

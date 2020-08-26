@@ -1,0 +1,62 @@
+<!-- 客户评论页面 -->
+<view class="main">
+	<view class="title">
+		<view>
+			<view>{{score}}</view>
+			<view class="bottom">综合评分</view>
+		</view>
+		<view class="last">
+			<view>{{total}}</view>
+			<view class="bottom">评价数</view>
+		</view>
+	</view>
+	<view class="item">
+		<view class="{{index == activeIndex ? 'item_index active' : 'item_index'}}" wx:for="{{['好评','中评','差评']}}" wx:key="index" bindtap="handIndex" data-index="{{index}}">
+			{{item}}
+		</view>
+	</view>
+	<wxs module="m1">
+		var ToDate = function(number1) {
+			var n =number1 * 1000 ; //number1 为毫秒 
+			var date = getDate(n);
+			var Y = date.getFullYear() + '-';
+			var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+			var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+			var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			return (Y + M + D + " " + h + ":" + m);
+		}
+		module.exports.ToDate = ToDate;
+	</wxs>
+	<!-- 循环 -->
+	<view class="content" wx:for="{{commentList}}" wx:key="index">
+		<view class="top">
+			<view class="left">
+				<view class="img">
+					<image src="/images/kong.png" mode="scaleToFill" wx:if="{{!item.user_info.avatar}}"></image>
+          	<image src="{{item.user_info.avatar}}" mode="scaleToFill" wx:if="{{item.user_info.avatar}}"></image>
+				</view>
+				<view class="item1">
+					<view class="top">{{item.user_info.nickname}}</view>
+					<view class="bottom">{{item.services_name}}</view>
+				</view>
+			</view>
+			<view class="right">
+			{{m1.ToDate(item.createtime)}}
+			</view>
+		</view>
+		<view class="bottom">
+			<view class="div">{{item.content}}</view>
+			<view class="imgs">
+				<view class="img" wx:for="{{item.images}}" wx:key="indexs" wx:for-index="indexs">
+	<image mode="scaleToFill" src="{{item}}"   catchtap="previewImage" data-url="{{item}}" data-index="{{index}}" />
+				</view>
+			</view>
+			
+		</view>
+	</view>
+
+
+
+<view wx:if="{{commentList.length == 0}}" class="meiyou"> 暂无此状态评论！</view>
+</view>

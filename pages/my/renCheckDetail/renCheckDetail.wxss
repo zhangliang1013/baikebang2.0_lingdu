@@ -1,0 +1,123 @@
+.main {
+  width: 750rpx;
+  /* height: 1334rpx; */
+  height: 100vh;
+  background:rgba(248,248,248,1);
+}
+.main .header {
+  padding: 0 20rpx;
+  /* padding-bottom: 20rpx; */
+  background-color: #fff;
+}
+.title {
+  background:rgba(248,248,248,1);
+  font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(51,51,51,1);
+padding-left: 40rpx;
+height: 100rpx;
+line-height: 100rpx;
+}
+.row5 {
+  display: flex;
+  background-color: #fff;
+  padding: 0 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+justify-content: space-between;
+}
+.main .row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 34rpx;
+  background-color: #fff;
+
+}
+.main .row .left{
+  display: flex;
+}
+.main .row .left .one{
+ width: 110rpx;
+ height: 110rpx;
+ margin-right: 20rpx;
+}
+.main .row .left .one image{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+}
+.main .row .left .two{
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(51,51,51,1);
+}
+.main .row .left .two .top{
+  margin-top: 10rpx;
+}
+.main .row .left .two .bottom{
+  font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+}
+.main .row .left .two .bottom text{
+  display: inline-block;
+  color:rgba(255,189,85,1);
+  margin-top: 6rpx;
+}
+.main .row .left .two .bottom1 text{
+  display: inline-block;
+  color:rgba(182,182,182,1);
+  /* margin-top: 10rpx; */
+  margin-bottom: -6rpx;
+}
+.main .row .left .two .bottom2 text{
+  display: inline-block;
+  color:rgba(177,206,250,1);
+  margin-top: 6rpx;
+}
+.main .row .left .two .bottom image{
+  display: inline-block;
+  height: 39rpx;
+  width: 39rpx;
+  margin-right: 5px;
+  margin-top: 20rpx;
+  vertical-align: bottom;
+  /* margin-top: -6rpx; */
+}
+.main .row .left .two .bottom1 image{
+  display: inline-block;
+  height: 31rpx;
+  width: 31rpx;
+  margin-right: 5px;
+  margin-top: 26rpx;
+  vertical-align: bottom;
+  /* margin-top: -6rpx; */
+}
+.main .row .right{
+  width: 14rpx;
+  height: 25rpx;
+}
+.main .row .right image{
+  width: 100%;
+  height: 100%;
+}
+.xian {
+  background:rgba(248,248,248,1);
+  height: 40rpx;
+}
+.wuren {
+  width: 100%;
+  text-align: center;
+  padding-top: 50rpx;
+}

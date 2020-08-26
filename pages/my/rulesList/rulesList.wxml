@@ -1,0 +1,28 @@
+<!-- 扣分记录列表 -->
+<view class="main">
+<view class="content">
+	<wxs module="m1">
+		var ToDate = function(number1) {
+			var n =number1 * 1000 ; //number1 为毫秒 
+			var date = getDate(n);
+			var Y = date.getFullYear() + '-';
+			var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+			var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+			var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			return (Y + M + D + " " + h + ":" + m);
+		}
+		module.exports.ToDate = ToDate;
+	</wxs>
+<view class="item"  wx:for="{{list}}" wx:key="index">
+<view class="row">
+<view class="left">扣除分数：{{item.score}}分</view>
+<view class="right">{{m1.ToDate(item.createtime)}}</view>
+</view>
+<view class="footer">扣分原因：{{item.reason}}</view>
+</view>
+
+
+</view>
+<view wx:if="{{list.length == 0}}" class="wu">暂无扣分记录</view>
+</view>

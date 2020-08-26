@@ -1,0 +1,28 @@
+<!-- 个人回头率页面 -->
+<view class="mian"> 
+<view class="header">
+ <view class="one">{{repetitive_rate}}%</view>
+ <view class="two">总回头率</view>
+</view>
+<view class="content">
+<view class="title">客户列表</view>
+<!-- 跳转到光顾情况 -->
+<navigator url="/pages/my/patronize/patronize?user_id={{item.user_id}}"  wx:for="{{roundList}}" wx:key="index" hover-class="none">
+<view class="row">
+<view class="left">
+<view class="img">
+<image src="{{item.user_info.avatar}}" mode="scaleToFill" wx:if="{{item.user_info.avatar}}"></image>
+<image src="/images/kong.png" mode="scaleToFill"   wx:if="{{!item.user_info.avatar}}"></image>
+</view>
+<view class="item">
+ <view class="top">{{item.user_info.nickname}}</view>
+ <view class="bottom">预约次数：{{item.service_total}}   回头率：{{item.repetitive_rate}}</view>
+</view>
+</view>
+<view class="right">
+  <image src="/images/you.png" mode="widthFix"> </image>
+</view>
+</view>
+</navigator>
+</view>
+</view>

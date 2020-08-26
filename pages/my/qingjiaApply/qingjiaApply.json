@@ -1,0 +1,7 @@
+{ 
+  "usingComponents": {},
+"navigationBarTitleText": "请假申请详情",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

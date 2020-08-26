@@ -1,0 +1,63 @@
+<!-- 理疗师提交请假申请页面 -->
+<view class="main">
+
+<!-- 开始时间 -->
+<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{start_time1}}" range="{{multiArray}}" >
+<view class="row">
+<view class="left">
+开始时间
+</view>
+<view class="right">
+ <text>{{start_time1}}</text>
+ <image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</view>
+</picker>
+
+<picker mode="multiSelector" bindchange="bindMultiPickerChange1" bindcolumnchange="bindMultiPickerColumnChange" value="{{end_time}}" range="{{multiArray}}">
+<view class="row">
+<view class="left">
+结束时间
+</view>
+<view class="right">
+ <text>{{end_time1}}</text>
+ <image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</view>
+</picker>
+
+ <picker bindchange="bindPickerChange2" value="{{index}}" range="{{jia_array}}">
+<view class="row">
+<view class="left">
+类型
+</view>
+<view class="right">
+ <text>{{liexing}}</text>
+ <image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</view>
+</picker>
+
+
+<view class="title">请假理由</view>
+
+<view class="content">
+   <textarea placeholder="请填写请假理由" name="textarea" bindinput="handleInput"  value="{{content}}"/>
+
+
+   <view class="imgs">
+    <view class="join" bindtap="selctPhone">+</view>
+    <view class="img">
+      <image src="{{item}}" mode="scaleToFill" wx:for="{{prell}}" wx:key="index"
+      bindtap="preimg" data-index="{{index}}"></image>
+    </view> 
+   </view>
+</view>
+
+<view class="btn"  bindtap="handleBtn">提交申请</view>
+
+<navigator hover-class="none" url="/pages/my/qingjiaList/qingjiaList" >
+<view class="code">查看申请记录</view>
+</navigator>
+
+</view>

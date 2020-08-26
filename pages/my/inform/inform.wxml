@@ -1,0 +1,43 @@
+<!-- 通知列表页面 -->
+<view class="main">
+	<view class="contain">
+		<wxs module="m1">
+			var ToDate = function(number1) {
+				var n =number1 * 1000 ; //number1 为毫秒 
+				var date = getDate(n);
+				var Y = date.getFullYear() + '-';
+				var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+				var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+				var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+					return (Y + M + D + " " + h + ":" + m);
+			}
+			module.exports.ToDate = ToDate;
+		</wxs>
+
+		<!-- 循环 -->
+		<navigator url="/pages/my/informDetail/informDetail?id={{item.id}}" wx:for="{{list}}" wx:key="index" hover-class="none"> 
+			<view class="row">
+				<view class="left">
+					<view class="one">
+
+						<image src="/images/gonggao.png" mode="scaleToFill" wx:if="{{item.type == 2}}"></image>
+        	<image src="/images/tongzhi.png" mode="scaleToFill" wx:if="{{item.type == 1}}"></image>
+					</view>
+					<view class="two">
+						<view class="top"><text wx:if="{{item.type == 2}}"> 公告 </text> <text wx:if="{{item.type == 1}}"> 通知 </text>   ：{{item.title}}</view>
+						<view class="bottom">	{{m1.ToDate(item.createtime)}}</view>
+					</view>
+
+				</view>
+				<view class="right">
+					<image src="/images/you.png" mode="scaleToFill"></image>
+				</view>
+			</view>
+		</navigator>
+
+
+	</view>
+
+	<view wx:if="{{list.length == 0}}" class="wuren">暂无通知或公告</view>
+</view>

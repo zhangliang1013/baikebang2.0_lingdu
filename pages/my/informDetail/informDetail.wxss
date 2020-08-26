@@ -1,0 +1,34 @@
+.main{
+  background:rgba(248,248,248,1);
+  height: 100vh;
+  width: 100vw;
+}
+.main .content {
+  padding: 50rpx 40rpx;
+  padding-top: 34rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.main .content .title {
+  font-size:28rpx;
+  font-family:Source Han Sans CN;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.main .content .title1{
+  margin-top: 15rpx;
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.main .content .detail{
+  margin-top: 30rpx;
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+margin-left: .3rpx;
+}

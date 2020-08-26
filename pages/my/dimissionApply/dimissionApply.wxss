@@ -1,0 +1,101 @@
+/* pages/my/dimissionApply/dimissionApply.wxss */
+.main{
+  background:rgba(255,255,255,1);
+  height: 100vh;
+  width: 100vw;
+}
+.main .contaer{
+  padding: 0 37rpx;
+  background-color: #fff;
+}
+.main .contaer .row{
+  display: flex;
+  justify-content: space-between;
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(51,51,51,1);
+padding:  30rpx 0;
+/* margin-top: 40rpx; */
+}
+.main .contaer .row .right{
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.main .contaer .row .right1{
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(21,109,242,1);
+}
+.main .contaer .row .right2{
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.main .contaer .title{
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(51,51,51,1);
+margin-top: 25rpx;
+}
+.main .contaer .content{
+  margin-top: 30rpx;
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.main .contaer .xian{
+  margin-left: -37rpx;
+  width: 750rpx;
+  height: 50rpx;
+  background-color: rgba(248,248,248,1);
+}
+.main .contaer .title1{
+  font-size:30rpx;
+  font-family:Source Han Sans CN;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-bottom: 15rpx;
+}
+.main .contaer .textarea{
+  height: 230rpx;
+}
+.main .contaer .textarea textarea{
+  height: 100%;
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(115,168,247,1);
+}
+.main .contaer .textarea >view{
+  height: 100%;
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(115,168,247,1);
+}
+.btn{
+  width:682rpx;
+height:70rpx;
+background:linear-gradient(0deg,rgba(21,109,242,1) 0%,rgba(42,127,255,1) 100%);
+border-radius:35rpx;
+font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(255,255,255,1);
+text-align: center;
+line-height: 70rpx;
+margin: 30rpx auto;
+}
+.main .contaer .footer{
+  font-size:30rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(153,153,153,1);
+}

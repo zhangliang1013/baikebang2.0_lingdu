@@ -1,0 +1,173 @@
+<!-- 我的首页页面 -->
+<view class="main">
+	<view class="header">
+		<view class="title">个人中心</view>
+
+		<view class="content">
+			<view class="left">
+				<view class="top">
+					<image src="{{detail.portrait}}" mode="widthFix" wx:if="{{detail.portrait}}"></image>
+					<image src="/images/kong.png" mode="widthFix" wx:if="{{!detail.portrait}}"></image>
+				</view>
+				<!-- <view class="bottom">
+				  理疗值：{{detail.extend.exp}}
+				</view> -->
+			</view>
+			<view class="right">
+				<view class="name">{{detail.name}}</view>
+				<view class="middle" wx:if="{{detail.status == 1 || detail.status == 4}}">
+					<image src="/images/shangban.png" mode="widthFix"></image>
+					<text>已上班</text>
+				</view>
+				<view class="middle" wx:if="{{detail.status == 2 }}">
+					<image src="/images/xiuxi.png" mode="widthFix" style="height: 30rpx;width: 30rpx;"></image>
+					<text style="color:#fff;">休息中</text>
+				</view>
+				<view class="middle" wx:if="{{ detail.status == 3}}">
+					<image src="/images/chifan.png" mode="widthFix" style="height: 30rpx;width: 30rpx;"></image>
+					<text style="color:#fff;">吃饭中</text>
+				</view>
+				<view class="foot" bindtap="penmap" data-longitude="{{detail.shop.longitude}}" data-latitude="{{detail.shop.latitude}}" data-name="{{detail.shop.name}}">
+					<image src="/images/ditusou.png" mode="widthFix"></image>
+					<text>{{detail.shop.name}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="query" catchtap="showQrcode">
+			<image src="/images/weima.png" mode="widthFix"></image>
+		</view>
+	</view>
+	<navigator url="/pages/my/grade/grade" hover-class="none">
+		<view class="dengji">
+			<view class="left">
+				<image src="/images/dengpao.png" mode="widthFix"></image>
+				<view>我的等级{{detail.extend.grade_name}}</view>
+			</view>
+			<view class="right">
+				<view>等级说明&升级</view>
+				<image src="/images/you1.png" mode="widthFix"></image>
+			</view>
+		</view>
+	</navigator>
+	<view class="footer">
+		<!-- 回头率 -->
+		<navigator url="/pages/my/round/round" class="item" hover-class="none">
+			<image src="/images/mine1.png" mode="widthFix"> </image>
+			<text>回头率</text>
+		</navigator>
+		<navigator url="/pages/my/comment/comment" class="item" hover-class="none">
+			<image src="/images/mine2.png" mode="widthFix" class="img1"> </image>
+			<text>客户评价</text>
+		</navigator>
+		<navigator url="/pages/my/sheet/sheet?time={{detail.createtime}}" class="item" hover-class="none">
+			<image src="/images/mine3.png" mode="widthFix" class="img2"> </image>
+			<text>考勤</text>
+		</navigator>
+		<navigator class="item tzhi" url="/pages/my/inform/inform" hover-class="none">
+			<image src="/images/mine4.png" mode="widthFix" class="img3"> </image>
+			<text>通知</text>
+			<view class="pao" wx:if="{{!detail.red_dot.notification == 0}}">
+				{{detail.red_dot.notification}}
+			</view>
+		</navigator>
+		<navigator class="item" url="/pages/my/opinion/opinion" hover-class="none">
+			<image src="/images/mine5.png" mode="widthFix" class="img4"> </image>
+			<text>意见反馈</text>
+		</navigator>
+		<navigator url="/pages/my/rules/rules?num={{detail.extend.etiquette_score}}" class="item" hover-class="none">
+			<image src="/images/mine6.png" mode="widthFix" class="img5"> </image>
+			<text>规章制度</text>
+		</navigator>
+		<navigator url="/pages/my/chooseShop/chooseShop" class="item tzhi" hover-class="none" wx:if="{{detail.is_manager == 1}}">
+			<image src="/images/mine7.png" mode="widthFix" class="img6"> </image>
+			<text>店长管理</text>
+			<view class="pao" wx:if="{{!detail.red_dot.shop_audit == 0}}">
+				{{detail.red_dot.shop_audit}}
+			</view>
+		</navigator>
+	</view>
+	<!-- 打卡按钮 -->
+	<view class="daka" bindtap="clockShow">
+		<view>打卡</view>
+		<view class="foot">{{code_msg}}</view>
+	</view>
+</view>
+<!-- 点击二维码展示 -->
+<view class="weima" wx:if="{{qrCode}}">
+	<view class="content">
+		<view class="cha" bindtap="hideQrcode">
+			<image src="/images/cha.png" mode="scaleToFill"></image>
+		</view>
+		<view class="ma">
+			<qrcode class="iblock" value="{{detail.qr_code}}" width="371"></qrcode>
+		</view>
+		<view class="text">专属二维码：已邀{{detail.extend.invite_quantity}}人</view>
+	</view>
+</view>
+<!-- 打卡展示 -->
+<view class="clock" wx:if="{{clockShow}}">
+	<view class="content">
+		<view class="cha" bindtap="hideClock">
+			<image src="/images/cha.png" mode="scaleToFill"></image>
+		</view>
+		<view class="title">打卡</view>
+		<view class="row">
+			<view class="left">当前状态：</view>
+			<view class="right">{{daka_code}}</view>
+		</view>
+		<!-- 吃饭 -->
+		<view class="eat">
+			<text>吃饭：</text>
+			<view class="switch">
+				<switch checked="{{eatSwitch}}" bindchange="switch1Change" color="#166EF2" style="zoom:0.8" />
+			</view>
+		</view>
+		<view class="row row1" wx:if="{{is_eat}}">
+			<view class="left">确认定位:</view>
+			<view class="right" bindtap="handleWei" wx:if="{{dingwei}}">
+				<text>点击定位</text>
+				<image src="/images/dingwei.png" mode="scaleToFill"></image>
+			</view>
+
+			<view class="right" bindtap="handleWei1" wx:if="{{!dingwei}}">
+				<text>已定位</text>
+				<image src="/images/shuaxin.png" mode="scaleToFill" class="shuaxin"></image>
+			</view>
+		</view>
+
+		<view class="row row2" wx:if="{{is_eat}}">
+			<view class="left">拍照：</view>
+			<view class="right">
+				<view class="chuan" wx:if="{{avatar == ''}}" bindtap="selctPhone">
+					<image src="/images/paizhao.png" mode="scaleToFill"></image>
+				</view>
+				<view class="images" wx:if="{{avatar != ''}}">
+					<image src="{{avatar}}" mode="scaleToFill" bindtap="preimg" data-index="{{index}}"></image>
+				</view>
+			</view>
+		</view>
+
+		<view class="footer1" bindtap="handleDaka" wx:if="{{is_eat}}">{{daka_code1}}</view>
+		<view class="footer1" bindtap="handleDaka" wx:if="{{!is_eat}}">吃饭打卡</view>
+	</view>
+</view>
+
+<!-- 授权微信登录 -->
+<!-- <view class="zhezhao" wx:if="{{is_wx}}">
+<view class="wx_login">
+<view class="img">
+ <image src="/images/logotu.png" mode="scaleToFill"></image>
+</view>
+
+<view class="cha"  catchtap="closeLogin"> 
+<image src="/images/cha.png" mode="scaleToFill"></image>
+</view>
+
+<view class="title">欢迎登录百可帮~</view>
+<view class="title1">登录后开始打卡接单</view>
+
+<navigator url="/pages/authorization/login/index" hover-class="none">
+<button class="auto_btn" bindtap="closeBtn">去登录</button>
+</navigator>
+</view>
+</view> -->

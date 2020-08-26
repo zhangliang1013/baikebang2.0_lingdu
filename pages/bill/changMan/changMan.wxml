@@ -1,0 +1,96 @@
+<!-- 更换理疗师页面 暂时没用这个页面 -->
+<view class="main">
+<view class="xian"></view>
+<view class="header">
+         <view class="left">
+            <view class="img">
+            <image src="/images/order1.png"  mode="scaleToFill"></image>
+            </view>
+            <view class="cotent">
+             <view class="shang_tit">Sellina Tang</view>
+             <view >回头率：30% <text>服务次数：02</text></view>
+            </view>
+           </view>
+
+         <view class="right">  
+          <view class="shang">A003</view>
+          <view class="xia"> 排队号码</view>
+         </view>
+</view>
+
+<view class="content">
+<view class="row">
+<view class="left">
+订单状态
+</view>
+<view class="right">
+治疗中
+</view>
+</view>
+
+<view class="row">
+<view class="left">
+服务项目
+</view>
+<view class="right">
+治疗中
+</view>
+</view>
+
+<view class="row">
+<view class="left">
+理疗师
+</view>
+<view class="right">
+治疗中
+</view>
+</view>
+
+<view class="row">
+<view class="left">
+取号时间
+</view>
+<view class="right">
+治疗中
+</view>
+</view>
+
+<view class="row last">
+<view class="left">
+已等待时间
+</view>
+<view class="right">
+治疗中
+</view>
+</view>
+</view>
+<view class="xian"></view>
+<view class="footer">
+
+
+  
+<picker bindchange="bindPickerChange" value="{{5}}" range="{{[1,2,3]}}">
+<view class="row">
+<view class="left">所需更换理疗师</view>
+<view class="right">
+<text>请选择</text>
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</view>
+</picker>
+
+<picker bindchange="bindPickerChange1" value="{{}}" range="{{['客户太多','客户赶时间']}}">
+<view class="row">
+<view class="left">更换理由</view>
+<view class="right">
+<text>请选择更换理由</text>
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</view>
+</picker>
+
+<view class="btn">
+提交
+</view>
+</view>
+</view>

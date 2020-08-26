@@ -1,0 +1,7 @@
+{ 
+  "usingComponents": {},
+"navigationBarTitleText": "请假审批",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

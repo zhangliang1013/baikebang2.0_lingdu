@@ -1,0 +1,21 @@
+<!-- 规章制度页面 -->
+<view class="main">
+<view class="header">
+<view class="title"> 本月分数 
+ <navigator url="/pages/my/deductMarks/deductMarks">
+  <text>?</text>
+ </navigator>
+</view>
+
+<view class="fenshu">{{num}}</view>
+</view>
+
+<navigator url="/pages/my/rulesList/rulesList" hover-class="none">
+<view class="row">
+<view class="left">扣分记录</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</view>
+</navigator>
+</view>

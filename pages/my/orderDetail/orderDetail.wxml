@@ -1,0 +1,73 @@
+<!-- 订单详情页面 -->
+<view class="main">
+<view class="box" >
+<wxs module="m1">
+									var ToDate = function(number1) {
+										 var n =number1 * 1000 ; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D + " " + h + ":" + m);
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+<view class="row">
+<view class="left">门店</view>
+<view class="right">{{info}}</view>
+</view>
+
+<view class="row">
+<view class="left">理疗师</view>
+<view class="right right1">{{info1}}</view>
+</view>
+
+<view class="row">
+<view class="left">服务项目</view>
+<view class="right">{{info2}}</view>
+</view>
+
+<view class="row" wx:if="{{info10}}">
+<view class="left">附加项目</view>
+<view class="right">{{info10}}</view>
+</view>
+
+<view class="row">
+<view class="left">价格</view>
+<view class="right">￥{{info3}}</view>
+</view>
+
+<view class="row">
+<view class="left">优惠</view>
+<view class="right right2">{{info4}}</view>
+</view>
+
+<view class="row">
+<view class="left">合计</view>
+<view class="right">￥{{info5}}</view>
+</view>
+
+<view class="row">
+<view class="left">取号时间</view>
+<view class="right">{{m1.ToDate(info6)}}</view>
+</view>
+
+<view class="row">
+<view class="left">等待时间</view>
+<view class="right">{{info7}}分钟</view>
+</view>
+
+<view class="row"  wx:if="{{info8}}">
+<view class="left">结束服务时间</view>
+<view class="right" >{{m1.ToDate(info8)}}</view>
+</view>
+
+<view class="row">
+<view class="left">订单编号</view>
+<view class="right">{{info9}}</view>
+</view>
+
+</view>
+</view>

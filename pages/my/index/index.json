@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "qrcode": "../../../components/qrcode"
+  },
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom"
+}

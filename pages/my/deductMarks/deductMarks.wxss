@@ -1,0 +1,8 @@
+/* pages/my/deductMarks/deductMarks.wxss */
+.main {
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+}
+.main  view {
+  margin-bottom: 10rpx;
+}

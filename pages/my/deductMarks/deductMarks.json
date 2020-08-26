@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "扣分规则",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

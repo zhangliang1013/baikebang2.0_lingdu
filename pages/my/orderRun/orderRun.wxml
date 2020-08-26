@@ -1,0 +1,111 @@
+<!-- 订单管理页面 -->
+<view class="main">
+	<view class="header">
+
+		<picker bindchange="bindPickerOrder" value="{{index}}" range="{{orderCode}}">
+			<view class="left">
+				<text>订单状态：{{orderName}}</text>
+				<image src="/images/sanjiao.png" mode="scaleToFill"></image>
+			</view>
+		</picker>
+
+<picker bindchange="bindPickerMan" value="{{index}}" range="{{manList}}">
+		<view class="right">
+			<text>理疗师：{{man}}</text>
+			<image src="/images/sanjiao.png" mode="scaleToFill"></image>
+		</view>
+		</picker>
+
+	</view>
+<wxs module="m1">
+									var ToDate = function(number1) {
+										var n =number1 * 1000 ; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D + " " + h + ":" + m);
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+	<view class="content" >
+		<!-- 循环 -->
+		<view class="box"  wx:for="{{list}}" wx:key="index">
+     <view class="head">
+      <view class="img">
+       <image src="/images/queueing.png" mode="scaleToFill"></image>
+      </view>
+      <!-- 判断状态 -->
+      <view class="code" wx:if="{{item.status == 1}}">待治疗</view>
+      <view class="code" wx:if="{{item.status == 2}}">治疗中</view>
+      <view class="code" wx:if="{{item.status == 3 || item.status == 4}}">已完成</view>
+      <view class="code" wx:if="{{item.status == 0}}">已取消</view>
+      <view class="code" wx:if="{{item.status == 5}}">已评论</view>
+     </view>
+
+  <view class="head1">
+  <view class="left">
+  <view class="one">
+  <image src="{{item.user_info.avatar}}" mode="scaleToFill"></image>
+  </view>
+  <view class="two">
+  <view class="top">{{item.user_info.nickname}}</view>
+  <view class="bottom">回头率：{{item.repetitive_rate}}   服务次数：{{item.service_count}}</view>
+  </view>
+  </view>
+  <view class="right">
+  <view class="top">{{item.line_number}}</view>
+  <view class="bottom">排队号码</view>
+  </view>
+  </view>
+
+<view class="row">
+<view class="left">服务项目</view>
+<view class="right">{{item.services_name}}</view>
+</view>
+
+<view class="row" wx:if="{{item.accessorialservice_name}}">
+<view class="left">附加项目</view>
+<view class="right">{{item.accessorialservice_name}}</view>
+</view>
+
+
+<view class="row">
+<view class="left">价格</view>
+<view class="right">￥{{item.total}}</view>
+</view>
+
+<view class="row">
+<view class="left">理疗师</view>
+<view class="right">{{item.doctor_name}}</view>
+</view>
+
+<view class="row">
+<view class="left">取号时间</view>
+<view class="right">{{m1.ToDate(item.createtime)}}</view>
+</view>
+
+<view class="row row1">
+<view class="left">等待时间</view>
+<view class="right">{{item.waiting_time}}分钟</view>
+</view>
+
+
+<navigator url="/pages/my/orderDetail/orderDetail?info10={{item.accessorialservice_name}}&info={{item.shop_name}}&info1={{item.doctor_name}}&info2={{item.services_name}}&info3={{item.total}}&info4={{item.coupon_price}}&info5={{item.price}}&info6={{item.createtime}}&info7={{item.waiting_time}}&info8={{item.paytime}}&info9={{item.order_on}}" class="btn" hover-class="none"> 
+查看订单详情
+</navigator>
+		</view>
+	</view>
+
+
+	<!-- 无订单显示 -->
+	<view class="no_show" wx:if="{{list.length == 0}}">
+		<view class="img">
+			<image src="/images/wucode.png" mode="widthFix"></image>
+		</view>
+		<view class="text"> 暂无此状态的订单</view>
+	</view>
+
+</view>

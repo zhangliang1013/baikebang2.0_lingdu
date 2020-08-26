@@ -1,0 +1,18 @@
+<!-- 店长 请假审批列表页面 -->
+<view class="main">
+<navigator url="/pages/my/qingjiaApply1/qingjiaApply?name={{item.doctor.name}}&portrait={{item.doctor.portrait}}&stime={{item.start_time}}&etime={{item.end_time}}&img={{item.images}}&id={{item.id}}&type={{item.type}}&status={{item.status}}&content={{item.content}}&shop_id={{id}}"  class="row"  wx:for="{{list}}" wx:key="index" hover-class="none">  
+<view class="left">
+ <view class="one">
+  <image src="{{item.doctor.portrait}}" mode="scaleToFill"></image>
+ </view>
+ <view class="two">
+  <view class="top">{{item.doctor.name}}</view>
+  <view class="bottom">申请请假{{item.hour}}小时</view>
+ </view>
+</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"> </image>
+</view>
+</navigator>
+<view class="wuren" wx:if="{{list.length == 0}}">暂无请假审批记录</view>
+</view>

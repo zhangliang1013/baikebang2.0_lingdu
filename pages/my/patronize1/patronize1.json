@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "光顾情况",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

@@ -1,0 +1,47 @@
+<!-- 离职申请页面 -->
+	<wxs module="m1">
+									var ToDate = function(number1) {
+										var n =number1 * 1000; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D);
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+<view class="main">
+<view class="contaer">
+<view class="row">
+<view class="left">入职时间</view>
+<view class="right">{{m1.ToDate(entry_time)}}</view>
+</view>
+<view class="row">
+<view class="left">申请离职时间</view>
+<view class="right">{{m1.ToDate(le_time)}}</view>
+</view>
+<view class="title"> 离职理由</view>
+<view class="content">
+{{content}}
+</view>
+<view class="row">
+<view class="left">离职状态</view>
+<view class="right right1">总部已审批</view>
+</view>
+<view class="xian" ></view>
+<view class="row">
+<view class="left">状态</view>
+<view class="right right2" wx:if="{{check_status == 0}}">未交接</view>
+<view class="right right2" wx:if="{{check_status == 1}}">已交接</view>
+</view>
+<view class="title1">交接情况：</view>
+<!-- 未交接完 -->
+<view class="textarea" >
+ <textarea placeholder="请填写交接内容" name="textarea" placeholder-style="color:#73A8F7" wx:if="{{check_status == 0}}" bindinput="handleInput" />
+ <view wx:if="{{check_status == 1}}">{{connect}}</view>
+</view>
+</view>
+<view class="btn" wx:if="{{check_status == 0}}" bindtap="handleBtn">交接完毕</view>
+</view>

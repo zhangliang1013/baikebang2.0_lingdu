@@ -1,0 +1,62 @@
+/* pages/my/qingjiaList/qingjiaList.wxss */
+.main {
+  background: rgba(248, 248, 248, 1);
+  height: 100vh;
+  width: 100vw;
+}
+
+.main .content {
+  background-color: #fff;
+  padding: 0 34rpx;
+}
+
+.main .content .row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(52, 52, 52, 1);
+  /* margin-top: 35rpx; */
+  padding: 15rpx 0;
+}
+
+.main .content .row1 {
+  padding-top: 30rpx;
+}
+
+.main .content .row .right {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(154, 154, 154, 1);
+}
+
+.main .content .row5 {
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+}
+.main .content .row5 .right1{
+  width:140rpx;
+height:40rpx;
+background:linear-gradient(0deg,rgba(21,109,242,1) 0%,rgba(42,127,255,1) 100%);
+border-radius:20rpx;
+font-size:22rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(255,255,255,1);
+text-align: center;
+line-height: 40rpx;
+}
+.wujilu {
+  padding-top: 50rpx;
+  width: 100%;
+  text-align: center;
+}
+.row .right6{
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+}

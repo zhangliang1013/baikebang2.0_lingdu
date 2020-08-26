@@ -1,0 +1,88 @@
+<!-- 请假个人详情 -->
+<view class="main">
+	<view class="content">
+		<view class="row1">
+			<view class="left">申请人</view>
+			<view class="right">
+				<image src="/images/kong.png" mode="scaleToFill" wx:if="{{!portrait}}"> </image>
+				<image src="{{portrait}}" mode="scaleToFill" wx:if="{portrait}}"> </image>
+				<text >{{name}}</text>
+			</view>
+		</view>
+		<!-- <wxs module="m1">
+			var ToDate = function(number1) {
+				var n =number1 * 1000 ;//number1 为毫秒 
+				var date = getDate(n);
+				var Y = date.getFullYear() + '-';
+				var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+				var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+				var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+				return (Y + M + D + ' ' + h + '时');
+			}
+			module.exports.ToDate = ToDate;
+		</wxs> -->
+
+		<view class="row">
+			<view class="left">
+				开始时间
+			</view>
+			<view class="right">
+		{{start_time}}
+			</view>
+		</view>
+
+		<view class="row">
+			<view class="left">
+				结束时间
+			</view>
+			<view class="right">
+		   {{end_time}}
+			</view>
+		</view>
+
+		<view class="row">
+			<view class="left">
+				类型
+			</view>
+			<view class="right">
+				{{type}}
+			</view>
+	</view>
+			<view class="row" wx:if="{{status == 1}}">
+				<view class="left">
+					状态
+				</view>
+				<view class="right">
+					已同意
+				</view>
+			</view>
+
+			<view class="row" wx:if="{{status == 2}}">
+				<view class="left">
+					状态
+				</view>
+				<view class="right">
+					已拒绝
+				</view>
+		</view>
+
+
+		<view class="title">请假理由</view>
+		<view class="textarea">
+			{{content}}
+		</view>
+
+		<view class="img" wx:if="{{img.length != 0}}">
+			<image src="{{item}}" mode="scaleToFill" wx:for="{{img}}" wx:key="index" bindtap="preimg" data-index="{{index}}"></image>
+		</view>
+	</view>
+
+
+
+	<view class="btn" wx:if="{{status == 0}}">
+		<view class="item" bindtap="handleNopass">不批准 </view>
+		<view class="item item1" bindtap="handlePass">批准 </view>
+	</view>
+
+</view>

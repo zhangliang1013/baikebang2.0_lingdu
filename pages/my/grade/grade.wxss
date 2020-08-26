@@ -1,0 +1,74 @@
+/* pages/my/grade/grade.wxss */
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F8F8F8;
+}
+.main .header {
+  width:750rpx;
+height:300rpx;
+background:linear-gradient(0deg,rgba(22,110,242,1) 0%,rgba(42,128,255,1) 100%);
+padding: 25rpx 35rpx;
+box-sizing: border-box;
+position: relative;
+}
+.main .header .title{
+  position: relative;
+  width:240px;
+  font-size:36rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(255,255,255,1);
+}
+.main .header .title .wen{
+position: absolute;
+top: 0;
+left : 260rpx;
+width:20rpx;
+height:20rpx;
+border:1px solid rgba(248,248,248,1);
+border-radius:50%;
+text-align: center;
+line-height: 20rpx;
+font-size:18rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(248,248,248,1);
+}
+.header .row {
+font-size:20rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(255,255,255,1);
+margin-top: 38rpx;
+}
+.header .footer{
+  width:160rpx;
+height:50rpx;
+background:rgba(255,255,255,1);
+border-radius:25rpx;
+font-size:20rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(28,116,248,1);
+text-align: center;
+line-height: 50rpx;
+position: absolute;
+bottom: 28rpx;
+right: 40rpx;
+}
+.main .content {
+  display: flex;
+  padding: 39rpx 34rpx;
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:500;
+color:rgba(52,52,52,1);
+justify-content: space-between;
+background:#fff;
+}
+.main .content image{
+  margin-top: 2rpx;
+  width: 16rpx;
+  height: 29rpx;
+}

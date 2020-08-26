@@ -1,0 +1,34 @@
+<!-- 店长端回头率光顾详情页面 -->
+<view class="mian">
+	<view class="header">
+		<view class="img">
+			<image src="{{user_info.avatar}}" mode="scaleToFill" wx:if="{{user_info.avatar}}"></image>
+      <image src="/images/kong.png" mode="scaleToFill" wx:if="{{!user_info.avatar}}"></image>
+		</view>
+		<view class="item">
+			<view class="top">{{user_info.nickname}}</view>
+			<view class="bottom">预约次数：{{service_total}} 回头率：{{repetitive_rate}}</view>
+		</view>
+	</view>
+	<view class="title">光顾记录</view>
+	<view class="footer">
+		<wxs module="m1">
+			var ToDate = function(number1) {
+				var n =number1 * 1000 ; //number1 为毫秒 
+				var date = getDate(n);
+				var Y = date.getFullYear() + '-';
+				var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+				var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+				var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+				return (Y + M + D + " " + h + ":" + m);
+			}
+			module.exports.ToDate = ToDate;
+		</wxs>
+		<view class="row" wx:for="{{list}}" wx:key="index">
+			<view class="left">{{m1.ToDate(item.createtime)}}</view>
+			<view class="right">项目: {{item.services_name}}</view>
+		</view>
+   <view class="wuren" wx:if="{{list.length == 0}}">暂无光顾记录</view>
+	</view>
+</view>

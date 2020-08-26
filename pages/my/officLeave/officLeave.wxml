@@ -1,0 +1,46 @@
+<!-- 离职申请页面 -->
+<view class="main">
+
+	<wxs module="m1">
+		var ToDate = function(number1) {
+			var n =number1 * 1000 ; //number1 为毫秒 
+			var date = getDate(n);
+			var Y = date.getFullYear() + '-';
+			var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+			var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+			var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			return (Y + M + D);
+		}
+		module.exports.ToDate = ToDate;
+	</wxs>
+	<view class="row">
+		<view class="left">入职时间</view>
+		<view class="right1">
+			{{m1.ToDate(time)}}
+		</view>
+	</view>
+
+	<picker mode="date" value="{{date}}" end="2020-09-01" bindchange="bindDateChange">
+		<view class="row">
+			<view class="left">
+				申请离职时间
+			</view>
+			<view class="right">
+				<text>{{start_time}}</text>
+				<image src="/images/you.png" mode="scaleToFill"></image>
+			</view>
+		</view>
+	</picker>
+
+	<view class="title">离职理由</view>
+	<view class="content">
+		<textarea placeholder="请填写离职理由" name="textarea" bindinput="handleInput" value="{{content}}" />
+		</view>
+
+<view class="btn" bindtap="handleBtn">提交申请</view>
+
+<!-- <navigator hover-class="none" url="/pages/my/qingjiaList/qingjiaList" >
+<view class="code">查看离职记录</view>
+</navigator> -->
+</view>

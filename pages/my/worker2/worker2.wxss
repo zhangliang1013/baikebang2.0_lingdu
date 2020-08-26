@@ -1,0 +1,61 @@
+/* pages/my/worker2/worker2.wxss */
+.main {
+  padding: 0 15rpx;
+}
+.main .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 30rpx;
+  border-bottom: 2rpx solid rgba(238,238,238,1);
+  font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.main .row  .right{
+  margin-right: -15rpx;
+  width:35rpx;
+height:35rpx;
+border:2rpx solid rgba(21,109,242,1);
+border-radius:50%;
+ position: relative;
+}
+.main .row  .right .xin{
+  width: 18rpx;
+  height: 18rpx;
+  border-radius:50%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.footer {
+  margin-top: 55rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 34rpx;
+}
+.footer > view {
+  width:300rpx;
+height:72rpx;
+line-height: 71rpx;
+border:2rpx solid rgba(21,109,242,1);
+box-sizing: border-box;
+border-radius:36rpx;
+text-align: center;
+font-size:28rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(21,109,242,1);
+}
+.footer .right_btn {
+  background:rgba(21,109,242,1);
+  font-size:28rpx;
+  font-family:Source Han Sans CN;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.active {
+  background-color: rgba(21,109,242,1);
+}

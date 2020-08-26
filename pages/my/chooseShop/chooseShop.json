@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "选择店铺",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

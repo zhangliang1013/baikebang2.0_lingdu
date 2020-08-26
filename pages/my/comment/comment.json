@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "客户评论",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

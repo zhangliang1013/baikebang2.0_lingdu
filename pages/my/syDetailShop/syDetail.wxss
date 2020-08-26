@@ -1,0 +1,240 @@
+/* pages/rate/syDetail/syDetail.wxss */
+.main{
+  background:rgba(248,248,248,1);
+}
+.header {
+  width: 750rpx;
+  height: 481rpx;
+  background: linear-gradient(0deg, rgba(22, 110, 242, 1) 0%, rgba(42, 128, 255, 1) 100%);
+  position: relative;
+}
+
+.header .fanhui {
+  position: absolute;
+  left: 40rpx;
+  top: 80rpx;
+  width: 17rpx;
+  height: 32rpx;
+  z-index: 99;
+}
+
+.header .fanhui image {
+  width: 100%;
+  height: 100%;
+}
+
+.header>.title {
+  font-size: 32rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 78rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .content .chooseZoom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 55rpx;
+  box-sizing: border-box;
+}
+.header .content .choose  {
+  margin-top: 170rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+}
+.header .content .choose .choose_data {
+  display: flex;
+}
+
+.content .choose image {
+  height: 11rpx;
+  width: 22rpx;
+  vertical-align: top;
+  margin-left: 12rpx;
+  margin-top: 15rpx;
+}
+
+.content .code {
+  margin-top: 30rpx;
+  display: flex;
+  width: 750rpx;
+  justify-content: space-around;
+}
+
+.content .code .item_ {
+  font-size: 30rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .code .item_ .xian{
+  height: 3rpx;
+  background-color: #fff;
+  width: 60rpx;
+  margin-top: 20rpx;
+}
+.content .hezi {
+  margin-top: 20rpx;
+  width: 682rpx;
+  height: 260rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1rpx 8rpx 13rpx 0rpx rgba(36, 122, 250, 0.33);
+  border-radius: 20rpx;
+  padding: 58rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.content .hezi .one {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(52, 52, 52, 1);
+}
+
+.content .hezi .two {
+  font-size: 70rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  color: rgba(52, 52, 52, 1);
+  margin-top: 20rpx;
+}
+/* .fuwu {
+  position: relative;
+  width:682rpx;
+  height:600rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:1rpx 8rpx 13rpx 0rpx rgba(36,122,250,0.33);
+  border-radius:20rpx;
+  margin: 35rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fuwu .canvas {
+  height: 600rpx;
+}
+.fuwu .title {
+  font-size:32rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(52,52,52,1);
+position: absolute;
+top: 10rpx;
+left: 32rpx;
+}
+.main .time {
+  position: relative;
+  width:682rpx;
+  height:580rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:1rpx 8rpx 13rpx 0rpx rgba(36,122,250,0.33);
+  border-radius:20rpx;
+  margin: 30rpx auto;
+  margin-top: 135rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .time .title {
+font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(52,52,52,1);
+position: absolute;
+left: 32rpx;
+top: 30rpx;
+}
+.time .canvas {
+  height: 380rpx;
+}
+.time .canvas1 {
+  margin-left: -30rpx;
+  margin-bottom: -30rpx;
+}
+.jinri {
+  margin-top: 135rpx;
+}
+.fuwu .canvas1{
+  margin-left: -30rpx;
+  margin-top: -20rpx;
+} */
+
+
+
+.fuwu {
+  position: relative;
+  width:682rpx;
+  height:618rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:1rpx 8rpx 13rpx 0rpx rgba(36,122,250,0.33);
+  border-radius:20rpx;
+  margin: 35rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fuwu .canvas {
+  height: 610rpx;
+  margin-left: -40rpx;
+  margin-top: -15rpx;
+  /* margin-top: rpx; */
+}
+.fuwu .title {
+  font-size:32rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(52,52,52,1);
+position: absolute;
+top: 10rpx;
+left: 32rpx;
+}
+.main .time {
+  position: relative;
+  width:682rpx;
+  height:560rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:1rpx 8rpx 13rpx 0rpx rgba(36,122,250,0.33);
+  border-radius:20rpx;
+  margin: 30rpx auto;
+  margin-top: 135rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .time .title {
+font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:bold;
+color:rgba(52,52,52,1);
+position: absolute;
+left: 32rpx;
+top: 30rpx;
+}
+.time .canvas {
+  /* margin-left: -20rpx; */
+  margin-top:70rpx;
+  height: 416rpx;
+  background-color: #fff;
+}
+.jinri {
+  margin-top: 135rpx;
+}
+.time .canvas1{
+ margin-left: -40rpx;
+}

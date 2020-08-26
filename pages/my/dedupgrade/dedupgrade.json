@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "升级说明",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

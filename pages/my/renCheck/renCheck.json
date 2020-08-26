@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "人员考勤",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "评价隐藏申请",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

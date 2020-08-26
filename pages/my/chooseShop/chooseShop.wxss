@@ -1,0 +1,76 @@
+.main {
+  height: 100vh;
+  width: 100vw;
+  background:rgba(248,248,248,1);
+}
+.main .content{
+  background-color: #fff;
+  padding: 0 34rpx;
+}
+.main .content .row{
+  display: flex;
+  justify-content: space-between;
+  padding: 17rpx 0;
+  height: 124rpx;
+  align-items: center;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.main .content .row:last-child{
+  border-bottom: none;
+}
+.main .content .row .right{
+  width: 15rpx;
+  height: 28rpx;
+}
+.main .content .row .right image{
+  width: 15rpx;
+  height: 28rpx;
+}
+.main .content .row .left {
+  display: flex;
+}
+.main .content .row .left .one{
+  height: 124rpx;
+  width: 100rpx;
+  margin-right: 15rpx;
+}
+.main .content .row .left .one image{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+.main .content .row .left .two {
+  font-size:32rpx;
+  font-family:Source Han Sans CN;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.main .content .row .left .two .bottom{
+  font-size:20rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+ display : flex;
+}
+.main .content .row .left .two .bottom image{
+  width: 22rpx;
+  height: 29rpx;
+  margin-right: 10rpx;
+  margin-top: 17rpx;
+}
+.main .content .row .left .two .bottom text{
+  display: inline-block;
+  margin-top:19rpx;
+}
+.top view {
+  display: inline-block;
+  width: 8rpx;
+  height: 8rpx;
+  background-color: #ff3838;
+  border-radius: 50%;
+  margin-top: -50rpx;
+  transform: translateY(-8px);
+}

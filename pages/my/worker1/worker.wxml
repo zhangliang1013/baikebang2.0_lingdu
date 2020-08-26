@@ -1,0 +1,44 @@
+<!-- 店长端 理疗师排班 -->
+<view class="main">
+
+	<view class="header">
+		<calendar style="width:100%;"  days-color="{{color}}" weeks-type="cn" binddayClick="dayClick" start-date="2018-01" end-date="2019-01"/>
+	</view>
+
+	<view class="title">
+	 <view>排班详情</view>
+
+	<text bindtap="handleDelelt">清除排班</text>
+	</view>
+
+
+<view class="row" bindtap="handleZao">
+<view class="time">早班</view>
+<view class="biaoqian">
+<text>理疗师：{{man}}</text>
+<image src="/images/you.png"></image>
+</view>
+</view>
+
+
+<!-- <view class="row">
+<view class="time">中班</view>
+<view class="biaoqian">
+<text>理疗师：{{man1}}</text>
+<image src="/images/you.png"></image>
+</view>
+</view> -->
+
+
+
+<view class="row" bindtap="handleWan">
+<view class="time">晚班</view>
+<view class="biaoqian">
+<text>理疗师：{{man2}}</text>
+<image src="/images/you.png"></image>
+</view>
+</view>
+
+
+
+</view>

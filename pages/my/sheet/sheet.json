@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "我的考勤",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

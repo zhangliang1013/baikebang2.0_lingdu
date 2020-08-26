@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "门店满意度详情",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

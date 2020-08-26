@@ -1,0 +1,63 @@
+<!-- 登录页面 -->
+<view class="main">
+<view class="header">
+ <view class="img">
+ <!-- <image src="/images/logo.png" mode="scaleToFill"></image> -->
+</view>
+</view>
+<view class="cotain">
+<view class="title">
+手机号码
+</view>
+<view class="input">
+<input placeholder='请填写手机号码' placeholder-style="font-size:24rpx;font-family:Source Han Sans CN;font-weight:400;color:rgba(205,205,205,1);" bindinput="handlePhone" value="{{phone}}">
+</input>
+</view>
+<view class="title">
+密码
+</view>
+<view class="input">
+<input placeholder='请填写密码' placeholder-style="font-size:24rpx;font-family:Source Han Sans CN;font-weight:400;color:rgba(205,205,205,1);"
+bindinput="handleMima" type="password" value="{{password}}">
+</input>
+</view>
+</view>
+<view class="footer">
+ <view class="btn" bindtap="handle_login">
+ 登录
+ </view>
+ <view class="wei_btn">
+ <image src="/images/weixintu.png"  mode="scaleToFill"></image>
+  <text bindtap="openLogin"> 微信登录</text>
+ </view>
+</view>
+
+
+<view class="footer_tiao">
+<!-- <text>《</text>
+<navigator class="tiao" url="/pages/authorization/agreement/agreement" hover-class="none">百可帮小程序用户协议</navigator>
+<text>》</text> -->
+<view  class="tiao">注：仅限天瑞内部员工使用！</view>
+ </view>       
+</view>
+
+
+<!-- 授权微信登录 -->
+<view class="zhezhao" wx:if="{{is_wx}}">
+<view class="wx_login">
+<view class="img">
+ <image src="/images/logotu.png" mode="scaleToFill"></image>
+</view>
+
+<view class="cha"  catchtap="closeLogin"> 
+<image src="/images/cha.png" mode="scaleToFill"></image>
+</view>
+
+<view class="title">欢迎登录百可帮~</view>
+<view class="title1">登录后开始打卡接单</view>
+
+<button class="auto_btn" open-type="getPhoneNumber" bindgetphonenumber="autoWeiXin">授权微信登录</button>
+</view>
+</view>
+
+

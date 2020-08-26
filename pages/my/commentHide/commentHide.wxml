@@ -1,0 +1,55 @@
+<!-- 评论隐藏申请页面 -->
+<view class="main">
+<view class="container">
+<view class="header">
+<view class="left">
+<view class="one">
+<image src="{{avatar}}"  mode="scaleToFill"  wx:if="{{avatar}}"></image>
+<image src="/images/kong.png"  mode="scaleToFill" wx:if="{{!avatar}}"></image>
+</view>
+<view class="two">
+<view class="top">{{name}}</view>
+<view class="bottom">{{services_name}}</view>
+</view>
+</view>
+	<wxs module="m1">
+									var ToDate = function(number1) {
+										var n =number1 * 1000 ; //number1 为毫秒 
+										var date = getDate(n);
+										var Y = date.getFullYear() + '-';
+										var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+										var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+										var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+										var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+										return (Y + M + D + " " + h + ":" + m);
+									}
+									module.exports.ToDate = ToDate;
+								</wxs>
+<view class="right">
+{{m1.ToDate(time)}}
+</view>
+</view>
+
+<view class="content">{{content}}</view>
+
+<view class="imgs">
+ <view class="img"  wx:for="{{imgs}}" wx:key="index">
+ <image src="{{item}}" mode="scaleToFill"></image>
+ </view>
+</view>
+
+<view class="title">申请隐藏原因</view>
+
+<view class="textarea">
+   <textarea placeholder="请填写隐藏原因" name="textarea"  value="{{reason}}"  bindinput="bindReason"/>
+</view>
+</view>
+
+
+
+<view class="btn"  bindtap="handleBtn">
+提交申请
+</view>
+
+
+</view>

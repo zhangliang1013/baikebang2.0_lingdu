@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "离职管理",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

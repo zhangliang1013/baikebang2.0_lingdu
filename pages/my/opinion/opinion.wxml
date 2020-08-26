@@ -1,0 +1,25 @@
+<!-- 意见反馈页面 -->
+<view class="main">
+<view class="content">
+ <view class="title">
+<view class="left"> <text>*</text>
+ 反馈内容</view>
+ <view class="right">（0/1000）</view>
+ </view>
+
+<view class="textarea">
+  <textarea placeholder='请填写反馈,我们将为您不断改进' bindinput='handleText'/>
+</view>
+
+<view class="img">
+<view class="join" bindtap="selctPhone">+</view>
+<view class="imgs" wx:for="{{prell}}" wx:key="index">
+<image src="{{item}}" mode="scaleToFill" bindtap="preimg" data-index="{{index}}"></image>
+</view>
+</view>
+</view>
+
+<view class="btn"  bindtap="handBtn">
+提交反馈
+</view>
+</view>

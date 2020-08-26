@@ -1,0 +1,94 @@
+<!-- 收益首页页面 -->
+<view class="main">
+	<view class="header">
+		<view class="title">收益</view>
+
+		<view class="content">
+			<view class="one">{{detail.order_money}}</view>
+			<view class="two">本月业绩（元）</view>
+
+			<view class="content1">
+				<view class="left">
+					<view class="head">{{detail.order_money_target}}</view>
+					<view class="body">本月业绩指标(元)</view>
+				</view>
+				<view class="right">
+					<view class="head">{{detail.excess_order_money ? detail.excess_order_money : '0.00'}}</view>
+					<view class="body">本月已超指标(元)</view>
+				</view>
+			</view>
+
+			<navigator url="/pages/rate/syDetail/syDetail" hover-class="none">
+				<view class="foot">
+					<view>查看业绩详情</view>
+					<image src="/images/you.png"></image>
+				</view>
+			</navigator>
+
+		</view>
+	</view>
+
+
+	<view class="footer">
+		<view class="title">我的提成</view>
+		<view class="body">
+			<view class="head">
+				本月提成（元）
+			</view>
+
+			<view class="now">目前</view>
+			<view class="main_body">
+				<!-- 第一 -->
+				<view class="item">
+					<view class="num">{{detail.applause_rate}}</view>
+					<view class="text">满意度</view>
+				</view>
+
+				<view class="item">
+					<view class="num">{{detail.order_num}}</view>
+					<view class="text">工单量</view>
+				</view>
+
+				<view class="item">
+					<view class="num">{{detail.repetitive_rate}}</view>
+					<view class="text">回头率</view>
+				</view>
+
+				<view class="item">
+					<view class="num">{{detail.performance_assess}}</view>
+					<view class="text">提成系数</view>
+				</view>
+
+			</view>
+			<view class="now">指标</view>
+			<view class="main_body main_body1">
+				<view class="item">
+					<view class="num">{{detail.applause_rate_target}}</view>
+					<view class="text">满意度</view>
+				</view>
+
+				<view class="item">
+					<view class="num">{{detail.order_num_target}}</view>
+					<view class="text">工单量</view>
+				</view>
+
+				<view class="item">
+					<view class="num">{{detail.repetitive_rate_target}}</view>
+					<view class="text">回头率</view>
+				</view>
+
+				<view class="item">
+					<view class="num">{{detail.etiquette_score}}</view>
+					<view class="text">纪律分</view>
+				</view>
+			</view>
+			<navigator url="/pages/rate/tcDetail/tcDetail" hover-class="none">
+				<view class="foot">
+					<view>查看提成详情</view>
+					<image src="/images/you.png"></image>
+				</view>
+			</navigator>
+
+		</view>
+	</view>
+</view>

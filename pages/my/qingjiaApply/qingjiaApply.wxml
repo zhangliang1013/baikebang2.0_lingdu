@@ -1,0 +1,85 @@
+<!-- 请假个人详情 -->
+<view class="main">
+	<view class="content">
+		<view class="row1">
+			<view class="left">申请人</view>
+			<view class="right">
+				<image src="{{head_img}}" mode="scaleToFill" wx:if="{{head_img}}"> </image>
+				<image src="/images/kong.png" mode="scaleToFill" wx:if="{{!head_img}}"> </image>
+				<text >{{name}}</text>
+			</view>
+		</view>
+		<!-- <wxs module="m1">
+			var ToDate = function(number1) {
+				var n =number1 * 1000 ;//number1 为毫秒 
+				var date = getDate(n);
+				var Y = date.getFullYear() + '-';
+				var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+				var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+				var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+				return (Y + M + D + " " + h + ":" + m);
+			}
+			module.exports.ToDate = ToDate;
+		</wxs> -->
+		<!-- 开始时间 -->
+		<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{start_time}}" range="{{multiArray}}">
+			<view class="row">
+				<view class="left">
+					开始时间
+				</view>
+				<view class="right">
+					<text wx:if="{{start_time == '' }}">{{start_time1}}</text>
+					<text wx:if="{{start_time != ''}}">{{start_time}}</text>
+					<image src="/images/you.png" mode="scaleToFill"></image>
+				</view>
+			</view>
+		</picker>
+
+		<picker mode="multiSelector" bindchange="bindMultiPickerChange1" bindcolumnchange="bindMultiPickerColumnChange" value="{{end_time}}" range="{{multiArray}}">
+			<view class="row">
+				<view class="left">
+					结束时间
+				</view>
+				<view class="right">
+					<text wx:if="{{end_time == ''}}">{{end_time1}}</text>
+					<text wx:if="{{end_time != ''}}">{{end_time}}</text>
+					<image src="/images/you.png" mode="scaleToFill"></image>
+				</view>
+			</view>
+		</picker>
+
+		<picker bindchange="bindPickerChange2" value="{{index}}" range="{{jia_array}}">
+			<view class="row">
+				<view class="left">
+					类型
+				</view>
+				<view class="right">
+					<text>{{liexing}}</text>
+					<image src="/images/you.png" mode="scaleToFill"></image>
+				</view>
+			</view>
+		</picker>
+
+		<view class="row row10">
+			<view class="left">状态</view>
+			<view class="right" wx:if="{{status == 0}}">未审核</view>
+			<view class="right" wx:if="{{status == 1}}">已同意</view>
+			<view class="right" wx:if="{{status == 2}}">已拒绝</view>
+			<view class="right" wx:if="{{status == 3}}">已取消</view>
+		</view>
+
+		<view class="title">请假理由</view>
+		<view class="textarea">
+			<textarea placeholder="请填写请假理由" name="textarea" bindinput="handleInput" value="{{content}}" />
+			</view>
+<view class="img">
+<image src="{{item}}"  mode="scaleToFill" wx:for="{{prell}}" wx:key="index" bindtap="preimg" data-index="{{index}}"></image>
+</view>
+</view>
+
+<view class="btn"  wx:if="{{status == 0}}">
+<view class="item"  bindtap="handleQuxiao">取消请假 </view>
+<view class="item item1" bindtap="handleChanged">保存修改 </view>
+</view>
+</view>

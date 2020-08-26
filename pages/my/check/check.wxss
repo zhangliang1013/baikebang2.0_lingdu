@@ -1,0 +1,41 @@
+.main {
+  width: 750rpx;
+  /* height: 1334rpx; */
+  height: 100vh;
+  background: rgba(248, 248, 248, 1);
+}
+
+.main .header {
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.title {
+  background: rgba(248, 248, 248, 1);
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  padding-left: 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.row {
+  display: flex;
+  background-color: #fff;
+  padding: 0 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  justify-content: space-between;
+}
+
+.wujilu {
+  width: 100%;
+  text-align: center;
+  margin-top: 50rpx;
+}

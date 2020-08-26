@@ -1,0 +1,73 @@
+<!-- 店长管理页面 -->
+<view class="main">
+<view class="header">
+<view class="fanhui" bindtap="forMoreInfoTap">
+ <image src="/images/fanhui.png"></image>
+ </view>
+		<view class="title_name">店长管理</view>
+
+<view class="content">
+
+
+<navigator url="/pages/my/syDetailShop/syDetail?id={{id}}"  class="item" hover-class="none">
+<view class="top">{{detail.order_money}}</view>
+<view class="bottom">门店业绩(元)</view>
+</navigator>
+
+
+<navigator url="/pages/my/commentShop/comment?id={{id}}" class="item" hover-class="none">
+<view class="top">{{detail.applause_rate}}</view>
+<view class="bottom">门店满意度</view>
+</navigator>
+
+<navigator url="/pages/my/round1/round?id={{id}}" class="item item1" hover-class="none">
+<view class="top">{{detail.repetitive_rate}}</view>
+<view class="bottom">门店回头率</view>
+</navigator>
+
+</view>
+</view>
+
+
+<view class="container">
+<navigator url="/pages/my/orderRun/orderRun?id={{id}}" class="row" hover-class="none">
+<view class="left">订单管理</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</navigator>
+
+<!-- <view class="row"> -->
+<navigator url="/pages/my/worker1/worker?id={{id}}" class="row" hover-class="none">
+<view class="left">排班</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</navigator>
+<!-- </view> -->
+
+<navigator url="/pages/my/renCheck/renCheck?id={{id}}" class="row" hover-class="none">
+<view class="left">考勤详情</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</navigator>
+
+
+<navigator url="/pages/my/leaveList/leaveList?id={{id}}" class="row" hover-class="none">
+<view class="left left1">请假审批 <text wx:if="{{!detail.leave_reddot == 0}}">{{detail.leave_reddot}}</text></view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</navigator>
+
+
+<navigator url="/pages/my/dimissionList/dimissionList?id={{id}}" class="row" hover-class="none">
+<view class="left left1">离职管理 <text wx:if="{{!detail.dimission_reddot == 0}}">{{detail.dimission_reddot}}</text></view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</navigator>
+
+</view>
+</view>

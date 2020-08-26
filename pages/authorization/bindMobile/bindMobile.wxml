@@ -1,0 +1,29 @@
+<!-- 使用其他手机号码绑定页面 -->
+<view class="main">
+
+	<view class="head">
+		<image src="/images/shouquan_ing.png" mode="widthFix"></image>
+	</view>
+	<view class="w">
+		<view class="row">
+			<view class="left">
+			<text>+86</text>
+      <image src="/images/xia.png" mode="widthFix"></image>
+			</view>
+			<view class="right">
+				<input bindinput="getphone" placeholder="请输入手机号码" placeholder-style="font-size:24rpx;color:rgba(190,190,190,1);"></input>
+			</view>
+		</view>
+		<view class="row1">
+			<view class="left">
+				<input bindinput="getmima" placeholder="请输入验证码" placeholder-style="font-size:24rpx;color:rgba(190,190,190,1);"></input>
+			</view>
+			<view class="right" bindtap="{{ishi? 'bindphobe':''}}">
+				{{ishi?"获取验证码":time+'秒'}}
+			</view>
+		</view>
+	</view>
+	<view class="foot">
+		<view bindtap="bindOfcose" class="login_btn">登录百可帮</view>
+	</view>
+</view>

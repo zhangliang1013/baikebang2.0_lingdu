@@ -1,0 +1,20 @@
+<!-- 理疗师查询排班查询 -->
+<view class="main">
+
+	<view class="header">
+		<calendar style="width:100%;"  days-color="{{color}}" weeks-type="cn" binddayClick="dayClick" start-date="2018-01" end-date="2019-01" />
+	</view>
+
+	<view class="title">排班详情</view>
+
+
+	<view class="row" wx:for="{{list}}" wx:key="index">
+		<view class="time">{{item.time_quantum}}</view>
+		<view class="biaoqian">
+			<text>理疗师：{{name}}</text>
+		</view>
+	</view>
+
+	<view wx:if="{{list.length == 0}}" class="wuren">今日暂无排班信息</view>
+
+</view>

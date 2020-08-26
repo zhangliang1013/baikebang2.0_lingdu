@@ -1,0 +1,57 @@
+<!-- 个人请假申请记录列表 -->
+<view class="main">
+	<wxs module="m1">
+		var ToDate = function(number) {
+			var number1 = number + '';
+			var y = number1.substring(0, 4);
+			var m = number1.substring(4, 6);
+			var d = number1.substring(6, 8);
+			var h = number1.substring(8, 10);
+			return (y + '-' + m + '-' + d + ' ' + h + '时');
+		}
+		module.exports.ToDate = ToDate;
+	</wxs>
+
+	<view class="content" wx:for="{{list}}" wx:key="index">
+		<view class="row row1">
+			<view class="left">开始时间</view>
+     <view class="right" wx:if="{{item.start_time == 0}}"> {{item.start_time}} </view>
+			<view class="right" wx:if="{{item.start_time != 0}}">  {{m1.ToDate(item.start_time)}} </view>
+		</view>
+
+		<view class="row">
+			<view class="left">结束时间</view>
+			<view class="right" wx:if='{{item.end_time == 0}}'>{{item.end_time}}</view>
+			<view  class="right" wx:if='{{item.end_time != 0}}'>{{m1.ToDate(item.end_time)}}</view>
+		</view>
+
+		<view class="row">
+			<view class="left">类型</view>
+			<view wx:if="{{item.type == 1}}" class="right">事假</view>
+			<view wx:if="{{item.type == 2}}" class="right">病假</view>
+			<view wx:if="{{item.type == 3}}" class="right">调休</view>
+			<view wx:if="{{item.type == 4}}" class="right">年假</view>
+		</view>
+		<view class="row">
+			<view class="left">请假理由</view>
+			<view class="right right6">{{item.content}}</view>
+		</view>
+
+		<view class="row">
+			<view class="left">状态</view>
+			<view wx:if="{{item.status == 0}}" class="right">未审核</view>
+			<view wx:if="{{item.status == 1}}" class="right">已同意</view>
+			<view wx:if="{{item.status == 2}}" class="right">已拒绝</view>
+			<view wx:if="{{item.status == 3}}" class="right">已取消</view>
+		</view>
+		<view class="row row5">
+			<view class="left"></view>
+			<navigator url="/pages/my/qingjiaApply/qingjiaApply?stime={{item.start_time}}&etime={{item.end_time}}&type={{item.type}}&content={{item.content}}&status={{item.status}}&imgs={{item.images}}&id={{item.id}}&status={{item.status}}" hover-class="none">
+				<view class="right right1">
+					查看详情
+				</view>
+			</navigator>
+		</view>
+	</view>
+	<view wx:if="{{list.length == 0}}" class="wujilu"> 暂无请假申请记录</view>
+</view>

@@ -1,0 +1,42 @@
+<!-- 理疗师考勤查询页面 -->
+<view class="main">
+
+<view class="header">
+<calendar
+   style="width:100%;"
+	 days-color="{{color}}"
+   weeks-type="cn"
+   binddayClick="dayClick"
+   start-date="2018-01"
+   end-date="2019-01"
+   />
+</view>
+
+<view class="title">打开记录</view>
+	<wxs module="m1">
+		var ToDate = function(number1) {
+			var n =number1 * 1000 ; //number1 为毫秒 
+			var date = getDate(n);
+			var Y = date.getFullYear() + '-';
+			var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+			var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+			var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			return (Y + M + D + " " + h + ":" + m);
+		}
+		module.exports.ToDate = ToDate;
+	</wxs>
+
+
+<view class="row" wx:for="{{list}}" wx:key="index">
+<view class="time">	{{m1.ToDate(item.createtime)}}</view>
+<view class="biaoqian">打卡标签：
+<text wx:if="{{item.status == 1}}">上班</text>
+<text wx:if="{{item.status == 2}}">下班</text>
+<text wx:if="{{item.status == 3}}">吃饭</text>
+<text wx:if="{{item.status == 4}}">结束午休</text>
+</view>
+</view>
+
+<view wx:if="{{list.length == 0}}" class="wujilu">当前暂无打卡记录</view>
+</view>

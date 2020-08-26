@@ -1,0 +1,6 @@
+{ "usingComponents": {},
+"navigationBarTitleText": "规章制度",
+"navigationBarBackgroundColor": "#ffffff",
+"navigationBarTextStyle": "black",
+"enablePullDownRefresh": true
+}

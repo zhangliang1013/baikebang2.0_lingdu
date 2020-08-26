@@ -1,0 +1,49 @@
+<!-- 个人业绩详情 -->
+<view class="main">
+	<view class="header">
+		<view class="fanhui" bindtap="forMoreInfoTap">
+			<image src="/images/fanhui.png"></image>
+		</view>
+		<view class="title">个人业绩</view>
+
+		<view class="content">
+
+    		<view class="choose">
+				<view class="choose_data"> 
+				 <picker mode="date" value="{{start_date}}" start="2020-01-01" end="" bindchange="bindDateChange" fields="day">  
+			{{start_date}}
+				 </picker>
+				~
+				 <picker mode="date" value="{{end_date}}" start="{{start_date}}" end="2050-01-01" bindchange="bindDateChange2" fields="day" >  
+    {{end_date}}
+      </picker> 
+
+				</view>
+				<image src="/images/choose.png"></image>
+			   </view>
+			<view class="code">
+				<view class="item_" wx:for="{{['总业绩','今日业绩' ,'今月业绩']}}" wx:key="index" bindtap="handChooseType" data-index="{{index}}">
+					<text>{{item}}</text>
+					<view class="xian" wx:if="{{activeIndex == index }}"></view>
+				</view>
+			</view>
+			<view class="hezi">
+				<view class="one">业绩（元）</view>
+				<view class="two">{{detail.total_order_amount}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 时间趋势 -->
+	<view class="time" wx:if="{{activeIndex != 1}}">
+		<view class="title">时间：{{start_date}} ~ {{end_date}} 业绩趋势图</view>
+		<view class="content">
+			<canvas bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"  canvas-id="lineCanvas" disable-scroll="true" class="canvas canvas1"></canvas>
+		</view>
+	</view>
+	<!-- 服务项目占比 -->
+	<view class="{{activeIndex == 1 ? 'jinri fuwu' : 'fuwu'}}">
+		<view class="title">服务项目占比</view>
+		<canvas canvas-id="pieCanvas" disable-scroll="true" class="canvas"></canvas>
+	</view>
+</view>

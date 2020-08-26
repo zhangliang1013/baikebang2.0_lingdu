@@ -1,0 +1,97 @@
+<!-- 提成详情页面 -->
+<view class="main">
+	<view class="header">
+		<view class="fanhui" bindtap="forMoreInfoTap">
+			<image src="/images/fanhui.png"></image>
+		</view>
+		<view class="title_name">个人绩效</view>
+		<view class="content">
+			<view class="price">{{detail.performance.performance_money}}元</view>
+			<picker mode="date" value="{{date}}" start="2019-06" end="" bindchange="bindDateChange" fields="month">
+				<view class="choose">
+					<text>{{now_month}}</text>
+					<image src="/images/choose.png" mode="scaleToFill"></image>
+				</view>
+			</picker>
+
+			<view class="bilie">
+				<view class="left">
+					<view class="top">{{detail.performance.dividend_assess * 100}}</view>
+					<view class="bottom">提成比例</view>
+				</view>
+
+				<view class="right">
+					<view class="top">{{detail.performance.dividend_assess}}</view>
+					<view class="bottom">提成系数</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="item item_">
+		<view class="head">满意度</view>
+		<view class="body">
+			<view class="left">
+				<view class="one">{{detail.performance.applause_rate}}</view>
+				<view class="two">目前</view>
+
+			</view>
+			<view class="right">
+				<view class="one">{{detail.performance.applause_rate_target}}</view>
+				<view class="two">指标</view>
+			</view>
+		</view>
+		<view class="footer">
+			<view class="xian"></view>
+			<view class="xian1" style="width: {{plan1}}%"></view>
+		</view>
+	</view>
+
+	<view class="item item2">
+		<view class="head">工单量</view>
+		<view class="body">
+			<view class="left">
+				<view class="one">{{detail.performance.order_num}}</view>
+				<view class="two">目前</view>
+
+			</view>
+			<view class="right">
+				<view class="one">{{detail.performance.order_num_target}}</view>
+				<view class="two">指标</view>
+			</view>
+		</view>
+		<view class="footer">
+			<view class="xian"></view>
+			<view class="xian1" style="width: {{plan2}}%"></view>
+		</view>
+	</view>
+
+	<view class="item item3">
+		<view class="head">回头率</view>
+		<view class="body">
+			<view class="left">
+				<view class="one">{{detail.performance.repetitive_rate}}</view>
+				<view class="two">目前</view>
+
+			</view>
+			<view class="right">
+				<view class="one">{{detail.performance.repetitive_rate_target}}</view>
+				<view class="two">指标</view>
+			</view>
+		</view>
+		<view class="footer">
+			<view class="xian"></view>
+			<view class="xian1" style="width: {{plan3}}%"></view>
+		</view>
+	</view>
+
+
+	<view class="time">
+		<view class="title">日期：{{now_month}} 提成趋势图</view>
+		<view class="content">
+			<canvas canvas-id="lineCanvas" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler" disable-scroll="true" class="canvas"></canvas>
+		</view>
+	</view>
+
+
+</view>

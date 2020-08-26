@@ -1,0 +1,62 @@
+/* pages/my/inform/inform.wxss */
+.main{
+  width: 100vw;
+  height: 100vh;
+  background:rgba(248,248,248,1);
+}
+.contain {
+  background-color: #fff;
+  padding: 0 34rpx;
+}
+.contain .row{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:  30rpx 0rpx;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.contain .row:last-child{
+  border-bottom:none;
+}
+.contain .row .left{
+  display: flex;
+}
+.contain .row .left .one{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.contain .row .left image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.contain .row .left .two{
+  /* height: 100%; */
+  flex-direction: column;
+  justify-content: space-around;
+  font-size:24rpx;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.contain .row .left .two .bottom{
+  font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+margin-top: 15rpx;
+}
+.contain .row .right{
+   width: 15rpx;
+   height: 28rpx;
+}
+.contain .row .right image{
+  width: 100%;
+  height: 100%;
+}
+.wuren {
+  padding-top: 60rpx;
+   text-align: center;
+   width: 100%;
+}

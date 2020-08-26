@@ -1,0 +1,27 @@
+<!-- 店长管理选择店铺页面 -->
+<view class="main">
+<view class="content">
+<!-- 循环 -->
+<navigator url="/pages/my/shopUser/shopUser?id={{item.id}}" class="row" wx:for="{{list}}" wx:key="index" hover-class="none"> 
+<view class="left">
+<view class="one">
+<image src="{{item.smallimage}}" mode="scaleToFill"></image>
+</view>
+<view class="two">
+<view class="top">{{item.name}} <view wx:if="{{item.red_dot != 0}}"></view>
+</view>
+
+<view class="bottom" catchtap="penmap" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-name="{{item.name}}" > 
+<image src="/images/dingwei.png" mode="scaleToFill"></image>
+<text>{{item.address}}</text>
+</view>
+</view>
+</view>
+<view class="right">
+<image  src="/images/you.png" mode="scaleToFill"></image>
+</view>
+</navigator>
+
+
+</view>
+</view>

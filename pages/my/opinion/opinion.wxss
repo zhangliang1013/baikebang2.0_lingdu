@@ -1,0 +1,70 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(248,248,248,1);
+  padding-top: 34rpx;
+}
+.main .content{
+  background-color: #fff;
+  padding:0 34rpx ;
+  top: 200rpx;
+}
+.content .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+}
+.content .title .left{
+    color: #333;
+    font-size: 26rpx;
+}
+.content .title .left text{
+  color: #156DF2;
+}
+.content .title .right{
+    font-size: 24rpx;
+    color: #999;
+}
+.content  .textarea{
+  color: #999;
+  font-size: 24rpx;
+  height: 200rpx;
+}
+.content  .textarea textarea{
+  height: 100%;
+}
+.content .img {
+  display: flex;
+  padding-bottom: 30rpx;
+}
+.content .img > view {
+  margin-right: 15rpx;
+}
+.content .img  .join{
+  width: 100rpx;
+  height: 100rpx;
+  color: #156DF2;
+  text-align: center;
+  line-height: 95rpx;
+  font-size: 70rpx;
+  border: 1rpx dashed #73A8F7;
+}
+.content .img .imgs {
+  width: 100rpx;
+  height: 100rpx;
+}
+.content .img .imgs image{
+  width: 100%;
+  height: 100%;
+}
+.btn {
+    height: 80rpx;
+    width: 690rpx;
+    margin: 40rpx auto;
+     color: #fff;
+     line-height: 80rpx;
+     text-align: center;
+     font-size: 30rpx;
+     border-radius: 60rpx;
+     background:linear-gradient(0deg,rgba(21,109,242,1) 0%,rgba(42,127,255,1) 100%);
+}

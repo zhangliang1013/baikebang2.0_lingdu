@@ -1,0 +1,80 @@
+<!-- 师傅考勤详情 -->
+<!-- 考勤查询页面 -->
+<view class="main">
+
+<!-- 上班 -->
+<view class="row">
+<view class="left">
+<view class="one">
+<image src="{{portrait}}" mode="scaleToFill"></image>
+</view>
+<view class="two">
+<view class="top">
+{{name}}
+</view>
+
+<view class="bottom" wx:if="{{status == 1 || status == 4 }}">
+<image src="/images/shangban.png"  mode="scaleToFill"></image>
+<text>上班</text>
+</view>
+
+<view class="bottom bottom1" wx:if="{{status == 2}}">
+<image src="/images/xiuxi.png"  mode="scaleToFill"></image>
+<text>休息中......</text>
+</view>
+
+<view class="bottom bottom1" wx:if="{{status == 0}}">
+<image src="/images/xiuxi.png"  mode="scaleToFill"></image>
+<text>已离职......</text>
+</view>
+
+<view class="bottom bottom2"  wx:if="{{status == 3}}">
+<image src="/images/chifan.png"  mode="scaleToFill"></image>
+<text>吃饭中，很快回来</text>
+</view>
+</view>
+</view>
+<view class="right">
+</view>
+</view>
+
+<wxs module="m1">
+		var ToDate = function(number1) {
+			var n =number1 * 1000 ; //number1 为毫秒 
+			var date = getDate(n);
+			var Y = date.getFullYear() + '-';
+			var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+			var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+			var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			return (Y + M + D + " " + h + ":" + m);
+		}
+		module.exports.ToDate = ToDate;
+	</wxs>
+
+
+<view class="xian"></view>
+<view class="header">
+<calendar
+   style="width:100%;"
+   days-color="{{color}}"
+   weeks-type="cn"
+   binddayClick="dayClick"
+    start-date="2018-01"
+   end-date="2019-01"
+   />
+</view>
+
+<view class="title">打卡记录</view>
+
+<view class="row5"  wx:for="{{kaoQin}}" wx:key="index">
+<view class="time">{{m1.ToDate(item.createtime)}}</view>
+<view class="biaoqian" wx:if="{{item.status == 1}}">打卡标签：上班</view>
+<view class="biaoqian" wx:if="{{item.status == 2}}">打卡标签：下班</view>
+<view class="biaoqian"  wx:if="{{item.status == 3}}">打卡标签：吃饭</view>
+<view class="biaoqian"  wx:if="{{item.status == 4}}">打卡标签：结束午休</view>
+</view>
+
+
+<view class="wuren" wx:if="{{kaoQin.length == 0}}">此理疗师今日暂无打卡记录！</view>
+</view>

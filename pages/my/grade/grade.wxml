@@ -1,0 +1,22 @@
+<!-- 我的等级页面 -->
+<view class="main">
+<view class="header">
+<view class="title">目前等级：{{detail.grade_name}}
+  <navigator url="/pages/my/dedupgrade/dedupgrade" hover-class="none">
+  <view class="wen" >?</view>
+  </navigator>
+</view>
+<view class="row">离可申请升级到{{detail.name}}，还差：</view>
+<view class="row">工作日：{{detail.upgrade_workday}}天    订单量：{{detail.upgrade_orderquantity}}   回头率：{{detail.upgrade_repetitiverate}}%  评分：{{detail.upgrade_score}}</view>
+<view class="footer" bindtap="{{is_sure? 'handleBtn' : 'handle'}}">
+申请升级
+</view>
+</view>
+<navigator url="/pages/my/inform/inform" hover-class="none">
+<view class="content">
+<view class="left">升级申请记录</view>
+ <image src="/images/you.png" mode="widthFix"></image>
+</view>
+</navigator>
+
+</view>

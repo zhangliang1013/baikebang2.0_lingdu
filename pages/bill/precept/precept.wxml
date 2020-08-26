@@ -1,0 +1,87 @@
+
+<!-- 针队方案页面 -->
+<view class="mb-bg-20"></view>
+<view class="program-box">
+  <view class="cell bb">
+    <view class="cell-name">用户</view>
+    <view class="cell-val">
+    <image class="head_img" src="{{item}}" mode="aspectFit" wx:if="{{item}}"></image>
+        <image class="head_img" src="/images/kong.png" mode="aspectFit" wx:if="{{!item}}"></image>
+    <text class="name_title">{{item1}}</text></view>
+  </view>
+
+  <view class="cell bb">
+    <view class="cell-name">理疗师</view>
+    <view class="cell-val">{{item2}}</view>
+  </view>
+
+  <view class="cell bb">
+    <view class="cell-name">服务项目</view>
+    <view class="cell-val">{{item3}}</view>
+  </view>
+
+
+  <view class="cell">
+    <view class="cell-name">理疗师方案</view>
+  </view>
+
+
+     <view class="cell-textarea">
+      <textarea name="cause" placeholder="请写下您的方案" auto-height="{{true}}" value="{{content_if}}" 
+      bindinput="handleText" placeholder-style="color:#fff;"></textarea>
+      <view class="textarea" wx:if="{{false}}">{{content_if}}</view>
+
+      <!-- 上传图片 -->
+   <view class="images">
+   <view class="join_img" bindtap="selctPhone">
+     +
+   </view>
+   <view wx:for="{{prell}}" wx:key="index" bindtap="bigImg" data-index="{{index}}">
+      <image src="{{item}}" mode="scaleToFill"></image>
+   </view>
+   </view>
+  </view>
+       <!-- 方案渲染 -->
+ 
+   <view class="btn_title" >
+      <text wx:for="{{['经络淤堵','大椎堵塞','肩周劳损']}}" wx:key="index" class="{{index == active1 ? 'active_text' : ''}}" bindtap="handleClick" data-index="{{index}}">
+      {{item}}
+      </text>
+     </view>
+ 
+
+<!-- 转诊推荐 -->
+  <view class="cell bb" >
+    <view class="cell-name">转诊推荐</view>
+    <view class="cell-val">
+      <view class="wai_quan" bindtap="handleChange">
+       <text class="li_quan" wx:if="{{transmit_code}}"></text>
+      </view>
+    </view>
+  </view>
+  <!-- 转诊码 -->
+    <!-- <view class="cell bb">
+    <view class="cell-name">转诊码</view>
+     <view class="cell-val value_input" style="margin-left:60rpx; !important">
+     <input  placeholder="输入转诊码" value="{{transmit}}" bindinput="bindReplaceInput"> </input>
+     </view> -->
+  <!-- </view> -->
+
+<!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{transmit_}}" header-text	="请选择转诊科目">
+  <view class="cell bb" >
+    <view class="cell-name">转诊部门推荐</view>
+    <view class="cell-val row_text" style="color:#156df2;">
+   <text> {{transmit_key}}</text>
+   <image src="/images/you.png"></image>
+    </view>
+    
+  </view>
+  </picker> -->
+
+ <view class="login_btn"  bindtap="handleBtn">
+ 提交
+ </view>
+</view>
+
+
+

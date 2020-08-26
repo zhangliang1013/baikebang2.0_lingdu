@@ -1,0 +1,21 @@
+<!-- 店长 离职申请列表 -->
+<view class="main">
+
+<navigator url="/pages/my/dimissionApply/dimissionApply?id={{item.id}}&shop_id={{id}}&stime={{item.entry_time}}&etime={{item.resignation_time}}&content={{item.content}}&connect={{item.connect}}&check_status={{item.check_status}}"  class="row" wx:for="{{list}}" wx:key="index" hover-class="none">  
+<view class="left">
+ <view class="one">
+  <image src="{{item.doctor.portrait}}" mode="scaleToFill"></image>
+ </view>
+ <view class="two">
+  <view class="top">{{item.doctor.name}}</view>
+  <view class="bottom" wx:if="{{item.check_status == 0}}">状态：未交接</view>
+    <view class="bottom" wx:if="{{item.check_status == 1}}">状态：已交接</view>
+ </view>
+</view>
+<view class="right">
+<image src="/images/you.png" mode="scaleToFill"> </image>
+</view>
+</navigator>
+
+<view class="wuren" wx:if="{{list.length == 0}}"> 暂无离职申请</view>
+</view>
